@@ -1,14 +1,15 @@
 'use strict';
 
-var debugging = !!process.env.DYLD_LIBRARY_PATH;
+var debugging = !!process.env.DYLD_LIBRARY_PATH
+  , bindings = require('bindings')
 
 module.exports = 
 
 /**
  * Convenience function to consistently resolve a module binding for two cases:
  *
- *  - 1) module is run as addon and the `bindings` module is used to resolve the module
- *  - 2) module is currently being debugged and directly executed inside a node process and therefore is resolved via `process.binding`
+ *  - a) module is run as addon and the `bindings` module is used to resolve the module
+ *  - b) module is currently being debugged and directly executed inside a node process and therefore is resolved via `process.binding`
  *
  * @name resolveBinding
  * @function
@@ -16,9 +17,8 @@ module.exports =
  * @return {Object} the binding object of the native module
  */
 function resolveBinding(name) {
-  return debugging 
-    ? process.binding(name.replace(/\.node$/,'')) 
-    : require('bindings')(name);
+  if (debugging ) return process.binding(name.replace(/\.node$/,''));
+  return bindings({ bindings: name, module_root: bindings.getRoot(module.parent) });
 }
 
 

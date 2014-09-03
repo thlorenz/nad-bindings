@@ -33,8 +33,8 @@ var leveldown = require('nad-bindings')('leveldown.node').leveldown
 <div class="description">
 <p>Convenience function to consistently resolve a module binding for two cases:</p>
 <ul>
-<li>1) module is run as addon and the <code>bindings</code> module is used to resolve the module</li>
-<li>2) module is currently being debugged and directly executed inside a node process and therefore is resolved via <code>process.binding</code></li>
+<li>a) module is run as addon and the <code>bindings</code> module is used to resolve the module</li>
+<li>b) module is currently being debugged and directly executed inside a node process and therefore is resolved via <code>process.binding</code></li>
 </ul>
 </div>
 <h5>Parameters:</h5>
@@ -62,7 +62,7 @@ var leveldown = require('nad-bindings')('leveldown.node').leveldown
 <li>
 <a href="https://github.com/thlorenz/nad-bindings/blob/master/index.js">index.js</a>
 <span>, </span>
-<a href="https://github.com/thlorenz/nad-bindings/blob/master/index.js#L7">lineno 7</a>
+<a href="https://github.com/thlorenz/nad-bindings/blob/master/index.js#L8">lineno 8</a>
 </li>
 </ul></dd>
 </dl>
