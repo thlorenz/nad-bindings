@@ -1,10 +1,9 @@
 {
   "name": "nad-bindings",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Generic Node.js bindings, uses @TooTallNate's bindings for `.node` modules and `process.binding` when run as part of Node.js",
   "main": "index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git://github.com/thlorenz/nad-bindings.git"
@@ -13,10 +12,13 @@
   "dependencies": {
     "bindings": "~1.2.1"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "keywords": [
-    "nad", "addon", "bindings", "debug", "Xcode"
+    "nad",
+    "addon",
+    "bindings",
+    "debug",
+    "Xcode"
   ],
   "author": {
     "name": "Thorsten Lorenz",
