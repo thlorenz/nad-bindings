@@ -22,7 +22,7 @@ function resolveBinding(name) {
       ? process._linkedBinding(name.replace(/\.node$/,''))
       : process.binding(name.replace(/\.node$/,''));
   }
-  return bindings({ bindings: name, module_root: bindings.getRoot(module.parent) });
+  return bindings({ bindings: name, module_root: bindings.getRoot(bindings.getFileName(__filename)) });
 }
 
 
