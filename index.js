@@ -17,7 +17,11 @@ module.exports =
  * @return {Object} the binding object of the native module
  */
 function resolveBinding(name) {
-  if (debugging ) return process.binding(name.replace(/\.node$/,''));
+  if (debugging ) {
+    return typeof process._linkedBinding === 'function'
+      ? process._linkedBinding(name.replace(/\.node$/,''))
+      : process.binding(name.replace(/\.node$/,''));
+  }
   return bindings({ bindings: name, module_root: bindings.getRoot(module.parent) });
 }
 
