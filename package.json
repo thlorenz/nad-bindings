@@ -1,6 +1,6 @@
 {
   "name": "nad-bindings",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Generic Node.js bindings, uses @TooTallNate's bindings for `.node` modules and `process.binding` when run as part of Node.js",
   "main": "index.js",
   "scripts": {},
